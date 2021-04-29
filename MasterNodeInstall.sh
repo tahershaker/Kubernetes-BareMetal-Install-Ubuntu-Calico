@@ -63,6 +63,7 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 
 sudo apt-get update && sudo apt-get install -y kubelet=${KUBEVERSION} kubeadm=${KUBEVERSION} kubectl=${KUBEVERSION}
 sudo apt-mark hold kubelet kubeadm kubectl
+sudo swapoff -a
 
 #   Initialize Kubeadm with required configuration
 sudo kubeadm init --pod-network-cidr 192.168.0.0/16
