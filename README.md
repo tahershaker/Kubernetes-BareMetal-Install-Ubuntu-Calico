@@ -58,7 +58,7 @@ sudo kubeadm join 10.10.20.78:6443 --token lxq0zl.seush421jcd56cx1 \
 ## Installing Calcio CNI
 ---
 **Do this only on the Master Node**
-Calcio CNI is an opensource kuberntes CNI the rpovides Networking and Security features to the Kubernetes cluster. We will install it from the public repo.
+  Calcio CNI is an opensource kuberntes CNI the rpovides Networking and Security features to the Kubernetes cluster. We will install it from the public repo.
 ```
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
