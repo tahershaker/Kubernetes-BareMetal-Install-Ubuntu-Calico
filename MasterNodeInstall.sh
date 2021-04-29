@@ -68,7 +68,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo swapoff -a
 
 #   Initialize Kubeadm with required configuration
-sudo kubeadm init --pod-network-cidr ${PODCIDR} --service-cidr string ${PODCIDR}
+sudo kubeadm init --pod-network-cidr=${PODCIDR} --service-cidr=${SVCCIDR}
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
