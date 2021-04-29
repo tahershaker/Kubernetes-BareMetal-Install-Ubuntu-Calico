@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 KUBEVERSION=1.20.4-00
+PODCIDR=172.30.0.0/16
+SVCCIDR=172.29.0.0/16
 
 #Install Containerd On Server
 #References: https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd
@@ -66,7 +68,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo swapoff -a
 
 #   Initialize Kubeadm with required configuration
-sudo kubeadm init --pod-network-cidr 192.168.0.0/16
+sudo kubeadm init --pod-network-cidr ${PODCIDR} --service-cidr string ${PODCIDR}
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
